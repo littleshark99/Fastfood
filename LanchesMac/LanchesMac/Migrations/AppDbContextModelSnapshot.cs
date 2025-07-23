@@ -120,11 +120,11 @@ namespace LanchesMac.Migrations
 
             modelBuilder.Entity("LanchesMac.Models.CarrinhoCompraItem", b =>
                 {
-                    b.HasOne("LanchesMac.Models.Lanche", "lanche")
+                    b.HasOne("LanchesMac.Models.Lanche", "Lanche")
                         .WithMany()
                         .HasForeignKey("LancheId");
 
-                    b.Navigation("lanche");
+                    b.Navigation("Lanche");
                 });
 
             modelBuilder.Entity("LanchesMac.Models.Lanche", b =>

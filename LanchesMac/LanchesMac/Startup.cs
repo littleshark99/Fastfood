@@ -4,6 +4,7 @@ using LanchesMac.Repositories;
 using LanchesMac.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 
 namespace LanchesMac;
 public class Startup
@@ -56,6 +57,20 @@ public class Startup
 
         app.UseEndpoints(endpoints =>
         {
+            endpoints.MapControllerRoute(
+              name: "home",
+              pattern: "{home}",
+              defaults: new { controller = "Home", action = "index" }
+              );
+
+            endpoints.MapControllerRoute(
+                name: "admin",
+                pattern: "admin",
+                defaults: new { controller = "admin", Action = "index" }
+                );
+
+
+
             endpoints.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
