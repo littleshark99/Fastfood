@@ -57,16 +57,12 @@ public class Startup
 
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapControllerRoute(
-              name: "home",
-              pattern: "{home}",
-              defaults: new { controller = "Home", action = "index" }
-              );
+
 
             endpoints.MapControllerRoute(
-                name: "admin",
-                pattern: "admin",
-                defaults: new { controller = "admin", Action = "index" }
+                name: "categoriaFiltro",
+                pattern: "Lanche/{action}/{categoria}",
+                defaults: new { controller = "Lanche", Action = "List" }
                 );
 
 
