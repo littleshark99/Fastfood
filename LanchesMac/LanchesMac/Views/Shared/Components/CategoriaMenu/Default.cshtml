@@ -1,0 +1,27 @@
+﻿
+
+
+<div class="dropdown">
+	<button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownLanches" data-bs-toggle="dropdown" aria-expanded="false" style="color : whitesmoke">
+		🍔 Lanches
+	</button>
+
+	<ul class="dropdown-menu" aria-labelledby="dropdownLanches">
+		@foreach (var categoria in Model)
+		{
+			<li>
+				<a class="dropdown-item" asp-controller="Lanche" asp-action="List" asp-route-categoria="@categoria.CategoriaNome">
+					@categoria.CategoriaNome
+				</a>
+			</li>
+		}
+
+		<li><hr class="dropdown-divider"></li>
+
+		<li>
+			<a class="dropdown-item fw-bold text-primary" asp-controller="Lanche" asp-action="List" asp-route-categoria="">
+				Todos os Lanches
+			</a>
+		</li>
+	</ul>
+</div>
